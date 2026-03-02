@@ -17,37 +17,45 @@
 html{scroll-behavior:smooth;}
 body{background:var(--ink);font-family:'DM Sans',sans-serif;color:var(--white);overflow-x:hidden;}
 
-/* HERO — type band top, full image below */
+/* HERO BAND */
 .hero-band{background:var(--purple4);padding:56px 64px 52px;position:relative;}
 .hero-band::after{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--purple),var(--green));}
+.hero-band-inner{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:end;}
+.hero-band-right{display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-end;gap:16px;padding-bottom:4px;}
 .eyebrow{font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--lavender2);margin-bottom:20px;}
 .hero-start{font-family:'DM Sans',sans-serif;font-weight:300;font-size:clamp(16px,2vw,24px);color:rgba(255,255,255,.6);letter-spacing:-.3px;margin-bottom:-4px;}
-.hero-hello{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(64px,9vw,128px);line-height:.85;letter-spacing:-5px;color:var(--white);margin-bottom:24px;}
+.hero-hello{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(64px,9vw,128px);line-height:.85;letter-spacing:-5px;color:var(--white);margin-bottom:0;}
 .hero-hello .dot{color:var(--lavender);}
-.hero-cta{display:flex;gap:3px;flex-wrap:wrap;margin-bottom:0;}
+.hero-cta{display:flex;gap:3px;flex-wrap:wrap;justify-content:flex-end;}
 .hcta{padding:12px 22px;font-family:'Unbounded',sans-serif;font-weight:700;font-size:10px;letter-spacing:-.1px;border:none;cursor:pointer;transition:transform .2s,filter .2s;}
 .hcta:hover{transform:translateY(-2px);filter:brightness(1.15);}
 .hcta-a{background:var(--purple);color:var(--white);}
 .hcta-b{background:var(--purple);color:var(--white);}
 .hcta-c{background:rgba(255,255,255,.12);color:rgba(255,255,255,.7);font-size:9px;letter-spacing:.5px;}
-.hero-url{margin-top:14px;font-size:10px;font-weight:500;letter-spacing:1.5px;color:rgba(255,255,255,.35);text-transform:uppercase;}
+.hero-url{font-size:10px;font-weight:500;letter-spacing:1.5px;color:rgba(255,255,255,.35);text-transform:uppercase;text-align:right;}
 .hero-url span{color:var(--lavender2);}
 
-/* HERO IMAGE — full width, uncropped */
-.hero-image{width:100%;display:block;line-height:0;}
+@media(max-width:768px){
+  .hero-band{padding:40px 28px 36px;}
+  .hero-band-inner{grid-template-columns:1fr;gap:28px;}
+  .hero-band-right{align-items:flex-start;}
+  .hero-cta{justify-content:flex-start;}
+  .hero-url{text-align:left;}
+}
+
+/* HERO IMAGE — full width, fully uncropped, natural 16:9 */
+.hero-image{width:100%;display:block;line-height:0;background:var(--purple4);}
 .hero-image img{width:100%;height:auto;display:block;}
 
-/* KEY VISUAL STRIP — responsive, gets bigger on wider screens */
-.kv-strip{background:var(--ink2);overflow:hidden;}
+/* KEY VISUAL STRIP — full image, gets taller on wider screens */
+.kv-strip{background:var(--ink2);line-height:0;}
 .kv-strip img{
   width:100%;
-  height:clamp(320px, 45vw, 680px);
-  object-fit:cover;
-  object-position:center center;
+  height:auto;
   display:block;
-  transition:transform .6s ease;
+  transition:transform .8s ease;
 }
-.kv-strip:hover img{transform:scale(1.02);}
+.kv-strip:hover img{transform:scale(1.015);}
 
 /* LABELS */
 .slabel{font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:12px;}
@@ -108,17 +116,17 @@ body{background:var(--ink);font-family:'DM Sans',sans-serif;color:var(--white);o
 .sb-vo-block strong{color:var(--white);font-weight:500;}
 
 /* ACTIVATIONS */
-.activations{background:var(--ink2);padding:72px 64px;}
-.act-framing{margin-bottom:32px;padding:16px 20px;background:var(--ink3);border-left:3px solid var(--purple);max-width:680px;}
-.act-framing p{font-size:12px;line-height:1.75;color:rgba(255,255,255,.5);font-weight:300;font-style:italic;}
+.activations{background:var(--cream);padding:72px 64px;}
+.act-framing{margin-bottom:32px;padding:16px 20px;background:rgba(0,0,0,.06);border-left:3px solid var(--purple);max-width:680px;}
+.act-framing p{font-size:12px;line-height:1.75;color:rgba(0,0,0,.5);font-weight:300;font-style:italic;}
 .act-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
-.act{background:var(--ink3);padding:28px 24px;transition:transform .2s,box-shadow .2s;}
-.act:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.4);}
+.act{background:var(--white);padding:28px 24px;transition:transform .2s,box-shadow .2s;}
+.act:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.1);}
 .act::before{content:'';display:block;width:24px;height:3px;background:linear-gradient(90deg,var(--purple),var(--green));margin-bottom:16px;}
-.act h4{font-family:'Unbounded',sans-serif;font-weight:700;font-size:11px;letter-spacing:-.2px;color:var(--white);margin-bottom:10px;line-height:1.3;}
+.act h4{font-family:'Unbounded',sans-serif;font-weight:700;font-size:11px;letter-spacing:-.2px;color:var(--ink);margin-bottom:10px;line-height:1.3;}
 .act-tactics{display:flex;flex-direction:column;gap:5px;margin-bottom:12px;}
-.act-tactic{font-size:11px;font-weight:600;color:var(--lavender2);}
-.act p{font-size:12px;line-height:1.7;color:rgba(255,255,255,.5);font-weight:300;}
+.act-tactic{font-size:11px;font-weight:600;color:var(--purple2);}
+.act p{font-size:12px;line-height:1.7;color:rgba(0,0,0,.5);font-weight:300;}
 
 /* ALTERNATES */
 .alts{background:var(--ink);padding:72px 64px;}
@@ -175,17 +183,22 @@ footer{background:var(--ink);padding:40px 64px;display:flex;align-items:center;j
 
 <!-- HERO BAND -->
 <div class="hero-band">
-  <!-- EDIT TEXT HERE -->
-  <div class="eyebrow">Aptive Campaign Concept — 988 Baltimore</div>
-  <div class="hero-start">Start with</div>
-  <h1 class="hero-hello">Hello<span class="dot">.</span></h1>
-  <div class="hero-cta">
-    <span class="hcta hcta-a">CALL 988</span>
-    <span class="hcta hcta-b">TEXT 988</span>
-    <span class="hcta hcta-b">CHAT 988</span>
-    <span class="hcta hcta-c">988helpline.org</span>
+  <div class="hero-band-inner">
+    <div class="hero-band-left">
+      <!-- EDIT TEXT HERE -->
+      <div class="eyebrow">Aptive Campaign Concept — 988 Baltimore</div>
+      <div class="hero-start">Start with</div>
+      <h1 class="hero-hello">Hello<span class="dot">.</span></h1>
+    </div>
+    <div class="hero-band-right">
+      <div class="hero-cta">
+        <span class="hcta hcta-a">CALL 988</span>
+        <span class="hcta hcta-b">TEXT 988</span>
+        <span class="hcta hcta-b">CHAT 988</span>
+      </div>
+      <div class="hero-url">Free · Confidential · 24/7 · <span>988helpline.org</span></div>
+    </div>
   </div>
-  <div class="hero-url">Free · Confidential · 24/7 · <span>988helpline.org</span></div>
 </div>
 
 <!-- HERO IMAGE — full width, uncropped -->
@@ -384,7 +397,7 @@ footer{background:var(--ink);padding:40px 64px;display:flex;align-items:center;j
 
 <!-- ACTIVATIONS -->
 <section class="activations fade-in">
-  <div class="slabel slabel-light">Proposed Campaign Activations</div>
+  <div class="slabel slabel-dark">Proposed Campaign Activations</div>
   <div class="act-framing">
     <p>The following represents a proposed activation framework. Specific channels, partners, and formats will be confirmed through research, community co-design, and client alignment prior to final campaign development.</p>
   </div>
