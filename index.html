@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Start with Hello — 988 Baltimore Campaign</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;900&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#6B3FA0;--purple2:#4a1a7a;--purple3:#2e0a5a;--purple4:#1a0638;
+  --lavender:#c99dff;--lavender2:#e8d8ff;
+  --green:#00C832;
+  --ink:#0C0C0C;--ink2:#161616;--ink3:#1e1e1e;
+  --cream:#F5F2EB;--white:#ffffff;--mist:#f0eef8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--ink);font-family:'DM Sans',sans-serif;color:var(--white);overflow-x:hidden;}
+
+/* HERO BAND — nameplate */
+.hero-band{background:var(--purple4);padding:36px 64px;position:relative;}
+.hero-band::after{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--purple),var(--green));}
+.hero-band-inner{display:flex;align-items:center;justify-content:space-between;gap:48px;flex-wrap:wrap;}
+.hero-band-left{}
+.hero-band-right{display:flex;flex-direction:column;align-items:flex-end;gap:14px;}
+.eyebrow{font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--lavender2);margin-bottom:4px;}
+.hero-campaign{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(18px,2.2vw,28px);letter-spacing:-1px;color:var(--white);line-height:1.1;}
+.hero-campaign span{color:var(--lavender);}
+.hero-cta{display:flex;gap:3px;flex-wrap:wrap;justify-content:flex-end;}
+.hcta{padding:12px 22px;font-family:'Unbounded',sans-serif;font-weight:700;font-size:10px;letter-spacing:-.1px;border:2px solid transparent;cursor:pointer;transition:transform .2s,border-color .2s,filter .2s;}
+.hcta:hover{transform:translateY(-2px);border-color:var(--green);filter:brightness(1.1);}
+.hcta-a{background:var(--purple);color:var(--white);}
+.hcta-b{background:var(--purple);color:var(--white);}
+.hero-url{font-size:10px;font-weight:500;letter-spacing:1.5px;color:rgba(255,255,255,.35);text-transform:uppercase;text-align:right;}
+.hero-url span{color:var(--lavender2);}
+@media(max-width:768px){
+  .hero-band{padding:28px;}
+  .hero-band-inner{flex-direction:column;align-items:flex-start;gap:20px;}
+  .hero-band-right{align-items:flex-start;}
+  .hero-cta{justify-content:flex-start;}
+  .hero-url{text-align:left;}
+}
+
+/* HERO IMAGE — full width, uncropped, fade in on load */
+.hero-image{width:100%;display:block;line-height:0;background:var(--purple4);overflow:hidden;}
+.hero-image img{
+  width:100%;height:auto;display:block;
+  animation:heroEntrance 1.8s ease forwards;
+}
+@keyframes heroEntrance{
+  0%{opacity:0;}
+  100%{opacity:1;}
+}
+
+/* KEY VISUAL STRIP — full image, gets taller on wider screens */
+.kv-strip{background:var(--ink2);line-height:0;}
+.kv-strip img{
+  width:100%;
+  height:auto;
+  display:block;
+  transition:transform .8s ease;
+}
+.kv-strip:hover img{transform:scale(1.015);}
+
+/* LABELS */
+.slabel{font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+.slabel::after{content:'';flex:1;height:1px;}
+.slabel-dark{color:var(--purple2);} .slabel-dark::after{background:rgba(74,26,122,.2);}
+.slabel-light{color:var(--lavender2);opacity:.8;} .slabel-light::after{background:rgba(255,255,255,.1);}
+.slabel-cream{color:var(--purple2);} .slabel-cream::after{background:rgba(74,26,122,.2);}
+
+/* BIG IDEA — full width */
+.big-idea{background:var(--cream);padding:80px 64px 72px;color:var(--ink);}
+.bi-hed{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(26px,3.8vw,48px);letter-spacing:-2px;color:var(--ink);line-height:.95;margin-bottom:28px;}
+.bi-hed .pu{color:var(--purple2);}
+.bi-body{font-size:15px;line-height:1.85;color:#1a1a1a;font-weight:300;}
+.bi-body p{margin-bottom:18px;}
+.bi-body p:last-child{margin-bottom:0;}
+
+/* RESEARCH + AUDIENCES */
+.split-section{display:grid;grid-template-columns:1fr 1fr;min-height:540px;}
+.split-research{background:var(--mist);padding:64px;color:var(--ink);}
+.split-audiences{background:var(--purple2);padding:64px;color:var(--white);}
+.research-list{display:flex;flex-direction:column;gap:18px;margin-top:8px;}
+.rl-item{display:flex;gap:14px;align-items:flex-start;}
+.rl-dot{width:5px;height:5px;border-radius:50%;background:var(--purple2);flex-shrink:0;margin-top:7px;}
+.rl-item p{font-size:13px;line-height:1.75;color:#1a1a1a;font-weight:300;}
+.rl-item strong{color:var(--purple2);font-weight:600;}
+.aud-paras{display:flex;flex-direction:column;gap:22px;margin-top:8px;}
+.aud-para-label{font-family:'Unbounded',sans-serif;font-weight:700;font-size:10px;letter-spacing:-.2px;color:var(--lavender2);margin-bottom:6px;}
+.aud-para p{font-size:13px;line-height:1.7;color:rgba(255,255,255,.75);font-weight:300;}
+.aud-para strong{color:var(--white);font-weight:500;}
+.aud-note{margin-top:28px;padding:16px 18px;background:rgba(255,255,255,.06);border-left:3px solid rgba(255,255,255,.15);}
+.aud-note p{font-size:12px;line-height:1.7;color:rgba(255,255,255,.65);font-style:italic;font-weight:300;}
+
+/* DESCRIPTORS */
+.descriptors{background:var(--purple3);padding:72px 64px;}
+.desc-hed{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(32px,4.5vw,60px);letter-spacing:-2.5px;color:var(--white);line-height:.9;margin-bottom:48px;}
+.desc-hed .dot{color:var(--lavender);}
+.desc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+.desc-cell{background:rgba(255,255,255,.07);padding:28px 24px;transition:background .2s,transform .2s;}
+.desc-cell:hover{background:rgba(255,255,255,.13);transform:translateY(-2px);}
+.desc-situation{font-family:'Lora',serif;font-style:italic;font-size:clamp(16px,1.7vw,21px);color:var(--white);line-height:1.5;margin-bottom:10px;}
+.desc-line{font-size:11px;font-weight:600;letter-spacing:.5px;color:var(--lavender2);opacity:.7;}
+.desc-cell.featured{background:var(--purple);grid-column:span 2;}
+.desc-cell.featured:hover{background:var(--purple);transform:none;}
+.desc-cell.featured .desc-situation{font-size:clamp(16px,1.8vw,22px);}
+.desc-cell.featured .desc-line{color:var(--lavender2);}
+
+/* STORYBOARD */
+.storyboard{background:var(--mist);padding:72px 64px;}
+.sb-hed{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(22px,3vw,38px);letter-spacing:-1.5px;color:var(--ink);margin-bottom:8px;line-height:1;}
+.sb-hed-sub{font-family:'Lora',serif;font-style:italic;font-size:16px;color:var(--purple2);margin-bottom:36px;}
+.sb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:8px;}
+.sb-cell{background:var(--white);overflow:hidden;position:relative;}
+.sb-img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;transition:transform .4s ease;filter:grayscale(15%);}
+.sb-cell:hover .sb-img{transform:scale(1.03);}
+.sb-caption{padding:14px 16px;}
+.sb-speaker{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--purple2);margin-bottom:5px;}
+.sb-vo{font-family:'Lora',serif;font-style:italic;font-size:14px;color:var(--ink);line-height:1.65;}
+.sb-vo-block{margin-top:32px;padding:28px 32px;background:var(--white);border-left:3px solid var(--purple);max-width:760px;}
+.sb-vo-block p{font-size:14px;line-height:2;color:#1a1a1a;font-weight:300;}
+.sb-vo-block strong{color:var(--ink);font-weight:600;}
+
+/* ACTIVATIONS */
+.activations{background:var(--ink2);padding:72px 64px;}
+.act-framing{margin-bottom:32px;padding:16px 20px;background:rgba(255,255,255,.05);border-left:3px solid var(--purple);max-width:680px;}
+.act-framing p{font-size:12px;line-height:1.75;color:rgba(255,255,255,.45);font-weight:300;font-style:italic;}
+.act-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+.act{background:var(--ink3);padding:28px 24px;transition:transform .2s,box-shadow .2s;}
+.act:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.4);}
+.act::before{content:'';display:block;width:24px;height:3px;background:linear-gradient(90deg,var(--purple),var(--green));margin-bottom:16px;}
+.act h4{font-family:'Unbounded',sans-serif;font-weight:700;font-size:11px;letter-spacing:-.2px;color:var(--white);margin-bottom:10px;line-height:1.3;}
+.act-tactics{display:flex;flex-direction:column;gap:5px;margin-bottom:12px;}
+.act-tactic{font-size:11px;font-weight:600;color:var(--lavender2);}
+.act p{font-size:12px;line-height:1.7;color:rgba(255,255,255,.5);font-weight:300;}
+
+/* ALTERNATES */
+.alts{background:var(--purple2);padding:72px 64px;}
+.alts-intro{max-width:640px;margin-bottom:48px;}
+.alts-intro p{font-size:14px;line-height:1.8;color:rgba(255,255,255,.65);font-weight:300;}
+.alts-intro strong{color:var(--white);font-weight:500;}
+.alts-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px;}
+.alt{background:var(--purple3);padding:36px;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s;}
+.alt:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.3);}
+.alt-bar{position:absolute;top:0;left:0;right:0;height:3px;}
+.alt-a .alt-bar{background:var(--purple);}
+.alt-b .alt-bar{background:var(--green);}
+.alt-num{font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:14px;}
+.alt-hed{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(20px,2.5vw,30px);letter-spacing:-1.5px;color:var(--white);margin-bottom:12px;line-height:.95;}
+.alt-hed .pu{color:var(--lavender);}
+.alt-hed .gr{color:var(--green);}
+.alt-tag{font-family:'Lora',serif;font-style:italic;font-size:15px;color:rgba(255,255,255,.7);margin-bottom:18px;line-height:1.55;}
+.alt-body{font-size:12px;line-height:1.8;color:rgba(255,255,255,.7);font-weight:300;border-top:1px solid rgba(255,255,255,.08);padding-top:16px;}
+.alt-body strong{color:var(--white);font-weight:500;}
+.alt-why{margin-top:14px;padding:12px 14px;background:rgba(255,255,255,.04);border-left:2px solid rgba(255,255,255,.15);}
+.alt-why p{font-size:11px;color:rgba(255,255,255,.55);line-height:1.65;font-style:italic;}
+.dw-anim-wrap{background:var(--purple4);border-radius:2px;padding:20px 24px;margin-bottom:16px;text-align:center;overflow:hidden;}
+.dw-static{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(11px,1.4vw,15px);color:rgba(255,255,255,.4);letter-spacing:-.3px;display:block;margin-bottom:4px;}
+.dw-dynamic{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(20px,2.4vw,30px);letter-spacing:-.5px;color:var(--white);height:1.3em;overflow:hidden;}
+.dw-static-988{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(20px,2.4vw,30px);letter-spacing:-.5px;color:rgba(255,255,255,.35);margin-top:2px;display:block;}
+.dw-dynamic-inner{animation:dwroll 5s infinite;}
+@keyframes dwroll{
+  0%,25%{transform:translateY(0);}
+  33%,58%{transform:translateY(-33.33%);}
+  66%,91%{transform:translateY(-66.66%);}
+  99%,100%{transform:translateY(0);}
+}
+.dw-dynamic-inner div{height:1.3em;display:flex;align-items:center;justify-content:center;}
+.dw-dynamic-inner .opt1{color:var(--lavender2);}
+.dw-dynamic-inner .opt2{color:var(--green);}
+.dw-dynamic-inner .opt3{color:var(--white);}
+
+/* SCROLL FADE */
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+
+footer{background:var(--ink);padding:40px 64px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;border-top:3px solid var(--purple);}
+
+@media(max-width:960px){
+  .hero-band,.big-idea,.storyboard,.activations,.descriptors,.alts{padding-left:28px;padding-right:28px;}
+  .split-section{grid-template-columns:1fr;}
+  .split-research,.split-audiences{padding:48px 28px;}
+  .sb-grid,.act-grid,.desc-grid,.alts-grid{grid-template-columns:1fr;}
+  .desc-cell.featured{grid-column:1;}
+  footer{padding:32px 28px;}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO BAND — nameplate -->
+<div class="hero-band">
+  <div class="hero-band-inner">
+    <div class="hero-band-left">
+      <div class="eyebrow">Aptive Campaign Concept — 988 Baltimore</div>
+      <div class="hero-campaign">Start with <span>hello.</span></div>
+    </div>
+    <div class="hero-band-right">
+      <div class="hero-cta">
+        <span class="hcta hcta-a">CALL 988</span>
+        <span class="hcta hcta-b">TEXT 988</span>
+        <span class="hcta hcta-b">CHAT 988</span>
+      </div>
+      <div class="hero-url">Free · Confidential · 24/7 · <span>988helpline.org</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO IMAGE — full width, uncropped -->
+<!-- UPDATE THIS PATH: drop Andrew's image in the same folder and rename to hello-poster.jpg -->
+<div class="hero-image">
+  <img src="./hello-poster.jpg" alt="Start with Hello key visual" />
+</div>
+
+
+<!-- BIG IDEA -->
+<section class="big-idea fade-in">
+  <div class="slabel slabel-dark">The Big Idea</div>
+  <div class="bi-body">
+    <p>The first thing you say when a 988 counselor picks up is hello. That's it. You don't need to explain yourself or have the right words ready. Saying hello is the first step, and everything after it gets easier from there.</p>
+    <p>This concept responds directly to the research: the people who need 988 most are often the people who don't think they qualify. Whether someone is experiencing an emotional emergency or just carrying something they haven't told anyone, the campaign works to lower the stakes of reaching out. Three ways in — call, text, or chat — each one designed to meet people where they are and make starting as easy as possible.</p>
+    <p>988 is here for all of it. For anxiety, grief, and hard days. For people experiencing a mental health emergency. For someone worried about a neighbor. For a parent scared for their kid. For a friend who doesn't know what else to do. "Start with Hello" holds all of that without drawing a line between who qualifies and who doesn't.</p>
+  </div>
+</section>
+
+
+<!-- KEY VISUAL STRIP — youth audience -->
+<!-- UPDATE THIS PATH: drop your kid-texting image in the same folder and rename to hello-youth.jpg -->
+<div class="kv-strip fade-in">
+  <img src="./hello-youth.jpg" alt="Youth audience — texting 988" />
+</div>
+
+
+<!-- RESEARCH + AUDIENCES -->
+<div class="split-section fade-in">
+  <div class="split-research">
+    <div class="slabel slabel-cream">Grounded in Research</div>
+    <div class="research-list">
+      <!-- EDIT TEXT HERE -->
+      <div class="rl-item"><div class="rl-dot"></div><p><strong>Lowering the stakes.</strong> BHSB's top finding: people don't call because they don't think their problem is big enough. The campaign will be built to remove that threshold at every touchpoint.</p></div>
+      <div class="rl-item"><div class="rl-dot"></div><p><strong>No clinical language.</strong> Everyday words like "anxious," "grieving," and "overwhelmed" will make 988 feel accessible to everyone.</p></div>
+      <div class="rl-item"><div class="rl-dot"></div><p><strong>Confidentiality is a top concern.</strong> Across demographics surveyed, fear of being found out was a primary barrier. Messaging will address privacy and trust directly and consistently.</p></div>
+      <div class="rl-item"><div class="rl-dot"></div><p><strong>Human, not institutional.</strong> Distrust of systems is heightened across Baltimore, particularly in communities already navigating other pressures. The tone will feel like a neighbor, not a government program.</p></div>
+      <div class="rl-item"><div class="rl-dot"></div><p><strong>Hopeful, not heavy.</strong> Research showed that despairing visuals cause people to disengage. Purple as primary color will balance warmth with seriousness throughout the visual system.</p></div>
+    </div>
+  </div>
+  <div class="split-audiences">
+    <div class="slabel slabel-light">Priority Audiences</div>
+    <div class="aud-paras">
+      <!-- EDIT TEXT HERE -->
+      <div class="aud-para">
+        <div class="aud-para-label">Youth Ages 13 to 24</div>
+        <p>Creative tailored for younger audiences, with text and chat as primary entry points. Sports figures and trusted community voices as potential messengers.</p>
+      </div>
+      <div class="aud-para">
+        <div class="aud-para-label">Men 45 and Older, Including Veterans</div>
+        <p>Practical framing, phone call as primary entry point. Community figures and athletes as trusted messengers. Stigma reduction is especially important for this audience.</p>
+      </div>
+      <div class="aud-para">
+        <div class="aud-para-label">LGBTQ+ Residents</div>
+        <p>Messaging will center affirming, culturally competent language. The dedicated 988 LGBTQ+ youth line is available 24/7 and worth featuring prominently for this audience.</p>
+      </div>
+      <div class="aud-para">
+        <div class="aud-para-label">People in or Approaching a Mental Health Emergency</div>
+        <p>988 handles emergencies too. The campaign will make clear that 988 is appropriate across the full spectrum, so no one hesitates when it matters most.</p>
+      </div>
+    </div>
+    <div class="aud-note">
+      <p>Audience priorities and messaging approaches will be refined through community co-design sessions and additional research prior to final creative development.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- DESCRIPTORS -->
+<section class="descriptors fade-in">
+  <div class="slabel slabel-light" style="margin-bottom:32px;">Sample Headlines + Copy Lines</div>
+  <!-- EDIT TEXT HERE -->
+  <div class="desc-grid">
+    <div class="desc-cell featured">
+      <div class="desc-situation">"You don't have to know what to say. 988 is here to help with free, confidential support, for whatever you're carrying."</div>
+      <div class="desc-line">Call · Text · Chat · Free · Confidential · Specialized Counselors · Any Time · 988helpline.org</div>
+    </div>
+    <div class="desc-cell">
+      <div class="desc-situation">For when you're scared for someone you love.</div>
+      <div class="desc-line">Call or text 988.</div>
+    </div>
+    <div class="desc-cell">
+      <div class="desc-situation">Para cuando no sabes por donde empezar.</div>
+      <div class="desc-line">Llama o escribe al 988.</div>
+    </div>
+    <div class="desc-cell">
+      <div class="desc-situation">For when it's been heavy for a while.</div>
+      <div class="desc-line">Call, text, or chat 988.</div>
+    </div>
+    <div class="desc-cell">
+      <div class="desc-situation">For when something feels like an emergency and you're not sure who to call.</div>
+      <div class="desc-line">Call or chat 988.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- STORYBOARD / PSA -->
+<section class="storyboard fade-in">
+  <div class="sb-hed">"It Starts with Hello."</div>
+  <div class="sb-hed-sub">PSA Concept</div>
+  <div class="sb-grid">
+
+    <!-- UPDATE: name stills sb-01.jpg through sb-13.jpg -->
+    <div class="sb-cell">
+      <img class="sb-img" src="./sb-01.jpg" alt="Shot 1" />
+      <div class="sb-caption">
+        <div class="sb-speaker">Voiceover</div>
+        <div class="sb-vo">It starts with...</div>
+      </div>
+    </div>
+    <div class="sb-cell">
+      <img class="sb-img" src="./sb-02.jpg" alt="Shot 2" />
+      <div class="sb-caption">
+        <div class="sb-speaker">Neighbors</div>
+        <div class="sb-vo">...a call.</div>
+      </div>
+    </div>
+    <div class="sb-cell">
+      <img class="sb-img" src="./sb-03.jpg" alt="Shot 3" />
+      <div class="sb-caption">
+        <div class="sb-speaker">Youth Sports Team</div>
+        <div class="sb-vo">...a text.</div>
+      </div>
+    </div>
+    <div class="sb-cell">
+      <img class="sb-img" src="./sb-04.jpg" alt="Shot 4" />
+      <div class="sb-caption">
+        <div class="sb-speaker">Young Student</div>
+        <div class="sb-vo">...a chat.</div>
+      </div>
+    </div>
+    <div class="sb-cell">
+      <img class="sb-img" src="./sb-05.jpg" alt="Shot 5" />
+      <div class="sb-caption">
+        <div class="sb-speaker">Voiceover</div>
+        <div class="sb-vo">It starts with...</div>
+      </div>
+    </div>
+    <div class="sb-cell">
+      <img class="sb-img" src="./sb-06.jpg" alt="Shot 6" />
+      <div class="sb-caption">
+        <div class="sb-speaker">Baltimore County</div>
+        <div class="sb-vo">...Baltimore County.</div>
+      </div>
+    </div>
+    <div class="sb-cell">
+      <img class="sb-img" src="./sb-07.jpg" alt="Shot 7" />
+      <div class="sb-caption">
+        <div class="sb-speaker">Howard County</div>
+        <div class="sb-vo">...Howard County.</div>
+      </div>
+    </div>
+    <div class="sb-cell">
+      <img class="sb-img" src="./sb-08.jpg" alt="Shot 8" />
+      <div class="sb-caption">
+        <div class="sb-speaker">Carroll County</div>
+        <div class="sb-vo">...Carroll County.</div>
+      </div>
+    </div>
+    <div class="sb-cell">
+      <img class="sb-img" src="./sb-09.jpg" alt="Shot 9" />
+      <div class="sb-caption">
+        <div class="sb-speaker">Teacher</div>
+        <div class="sb-vo">It starts with...</div>
+      </div>
+    </div>
+    <div class="sb-cell">
+      <img class="sb-img" src="./sb-10.jpg" alt="Shot 10" />
+      <div class="sb-caption">
+        <div class="sb-speaker">Restaurant Worker</div>
+        <div class="sb-vo">...you.</div>
+      </div>
+    </div>
+    <div class="sb-cell">
+      <img class="sb-img" src="./sb-11.jpg" alt="Shot 11" />
+      <div class="sb-caption">
+        <div class="sb-speaker">A Mother</div>
+        <div class="sb-vo">...me.</div>
+      </div>
+    </div>
+    <div class="sb-cell">
+      <img class="sb-img" src="./sb-12.jpg" alt="Shot 12" />
+      <div class="sb-caption">
+        <div class="sb-speaker">A Group</div>
+        <div class="sb-vo">...us.</div>
+      </div>
+    </div>
+    <div class="sb-cell">
+      <img class="sb-img" src="./sb-13.jpg" alt="Shot 13" />
+      <div class="sb-caption">
+        <div class="sb-speaker">Person from Frame One</div>
+        <div class="sb-vo">Hello?</div>
+        <div class="sb-speaker" style="margin-top:8px;">Narrator</div>
+        <div class="sb-vo">It starts with hello. Everyone falls down sometimes, but we'll pick up every time. Don't wait, call 988. By Baltimore, for Baltimore.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FULL VO BLOCK -->
+  <div class="sb-vo-block">
+    <div class="slabel slabel-dark" style="margin-bottom:16px;">Full Voiceover</div>
+    <p>
+      <strong>VO:</strong> It starts with...<br>
+      <strong>Neighbors:</strong> ...a call.<br>
+      <strong>Youth Sports Team:</strong> ...a text.<br>
+      <strong>Young Student:</strong> ...a chat.<br>
+      <strong>VO:</strong> It starts with...<br>
+      <strong>Baltimore County:</strong> ...Baltimore County.<br>
+      <strong>Howard County:</strong> ...Howard County.<br>
+      <strong>Carroll County:</strong> ...Carroll County.<br>
+      <strong>Teacher:</strong> It starts with...<br>
+      <strong>Restaurant Worker:</strong> ...you.<br>
+      <strong>A Mother:</strong> ...me.<br>
+      <strong>A Group:</strong> ...us.<br>
+      <strong>Person from Frame One:</strong> Hello?<br>
+      <strong>Narrator:</strong> It starts with hello. Everyone falls down sometimes, but we'll pick up every time. Don't wait, call 988. By Baltimore, for Baltimore.
+    </p>
+    <p style="margin-top:20px;font-size:13px;font-weight:600;letter-spacing:1px;color:var(--purple2);">Call or text 988 &nbsp;·&nbsp; 988helpline.org</p>
+  </div>
+</section>
+
+
+<!-- ACTIVATIONS -->
+<section class="activations fade-in">
+  <div class="slabel slabel-light">Potential Campaign Activations</div>
+  <div class="act-framing">
+    <p>The following represents potential activations for this campaign. Specific channels, partners, and formats will be confirmed through research, community co-design, and client alignment prior to final campaign development.</p>
+  </div>
+  <div class="act-grid">
+    <div class="act">
+      <h4>Broadcast + Streaming</h4>
+      <div class="act-tactics">
+        <span class="act-tactic">Television</span>
+        <span class="act-tactic">Streaming</span>
+      </div>
+      <p>30 and 60 second cuts of the overarching PSA distributed across broadcast and streaming platforms.</p>
+    </div>
+    <div class="act">
+      <h4>Radio</h4>
+      <div class="act-tactics">
+        <span class="act-tactic">Maryland radio stations</span>
+        <span class="act-tactic">Streaming audio</span>
+      </div>
+      <p>Radio remains one of the strongest reach channels across Maryland demographics and age groups.</p>
+    </div>
+    <div class="act">
+      <h4>Out of Home</h4>
+      <div class="act-tactics">
+        <span class="act-tactic">Billboards, transit shelters, or bus wraps</span>
+      </div>
+      <p>Placements in high-need ZIP codes, with the potential to tailor creative to specific communities and neighborhoods.</p>
+    </div>
+    <div class="act">
+      <h4>Digital + Social</h4>
+      <div class="act-tactics">
+        <span class="act-tactic">Paid social</span>
+        <span class="act-tactic">Geo-targeted placements</span>
+      </div>
+      <p>Social and digital content tailored by audience and geography.</p>
+    </div>
+    <div class="act">
+      <h4>Community Distribution</h4>
+      <div class="act-tactics">
+        <span class="act-tactic">Palm cards, flyers, magnets</span>
+      </div>
+      <p>Printed materials distributed through trusted in-person channels where communities already gather.</p>
+    </div>
+    <div class="act">
+      <h4>Sports + Ambassador</h4>
+      <div class="act-tactics">
+        <span class="act-tactic">Ravens and/or Orioles</span>
+        <span class="act-tactic">Stadium presence</span>
+        <span class="act-tactic">Athlete involvement</span>
+      </div>
+      <p>Baltimore athletes as potential campaign voices.</p>
+    </div>
+    <div class="act">
+      <h4>Youth Outreach</h4>
+      <div class="act-tactics">
+        <span class="act-tactic">Youth-facing channels</span>
+        <span class="act-tactic">Trusted community voices</span>
+      </div>
+      <p>Reaching younger audiences through channels and voices they already trust. Text and chat positioned as primary entry points.</p>
+    </div>
+    <div class="act">
+      <h4>Community Collaboration</h4>
+      <div class="act-tactics">
+        <span class="act-tactic">Local artist mural</span>
+        <span class="act-tactic">Light Up Green, May</span>
+      </div>
+      <p>"Start with Hello." as a potential mural phrase in targeted neighborhoods. Potential activation to coordinate with Mental Health America's annual light-up-green campaign each May.</p>
+    </div>
+    <div class="act">
+      <h4>Neighborhood + Event-Specific</h4>
+      <div class="act-tactics">
+        <span class="act-tactic">Mental Health Month, May</span>
+        <span class="act-tactic">Local events and activations</span>
+      </div>
+      <p>Creative and messaging tailored to relevant local moments — HonFest, ArtScape, community events across Maryland counties. For example, "Start here, hon." as a Hampden-specific variation.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ALTERNATES -->
+<section class="alts fade-in">
+  <div class="slabel slabel-light">Alternate Concepts</div>
+  <div class="alts-intro">
+    <p>Two additional concept directions. These approaches address the same brief differently, each still informed by the research. Whichever direction moves forward will ultimately be pressure-tested through focus groups and community input before final development.</p>
+  </div>
+  <div class="alts-grid">
+    <div class="alt alt-a">
+      <div class="alt-bar"></div>
+      <div class="alt-num">Alternate 01</div>
+      <h3 class="alt-hed">DON'T WAIT.<br><span class="pu">____</span> 988.</h3>
+      <p class="alt-tag">The blank fills with the action for each audience, or rotates in the same spot in animated applications. Each version targets a different entry point.</p>
+      <div class="dw-anim-wrap">
+        <span class="dw-static">DON'T WAIT.</span>
+        <div class="dw-dynamic">
+          <div class="dw-dynamic-inner">
+            <div class="opt1">CALL</div>
+            <div class="opt2">TEXT</div>
+            <div class="opt3">CHAT</div>
+          </div>
+        </div>
+        <span class="dw-static-988">988.</span>
+      </div>
+      <div class="alt-body">
+        <p>Three executions, one platform. <strong>Don't Wait. Call. 988. / Don't Wait. Text. 988. / Don't Wait. Chat. 988.</strong> Each version targets a different entry point.</p>
+        <p style="margin-top:10px;">There is an opportunity for this concept to be a jingle or memorable audio. BGE's downed wire campaign is a useful reference — a serious public safety message that stuck with people because it was set to music. "Don't Wait. Call. 988." has the same potential if set to music.</p>
+        <div class="alt-why" style="margin-top:12px;"><p>Grounded in BHSB's finding that people don't call because they don't think their problem is big enough. Strongest for audiences who need a push more than a permission slip.</p></div>
+      </div>
+    </div>
+    <div class="alt alt-b">
+      <div class="alt-bar"></div>
+      <div class="alt-num">Alternate 02</div>
+      <h3 class="alt-hed">YOU<br>GOOD<span class="gr">?</span></h3>
+      <p class="alt-tag">For when the answer is no — call, text, or chat 988.</p>
+      <div class="alt-body">
+        <p><strong>"You good? For when the answer is no — call, text, or chat 988."</strong> Leverages a phrase already in daily use. Carries BHSB's existing "Because we all need help sometimes" forward with new energy and local specificity.</p>
+        <div class="alt-why"><p>Trusted community voices asking the question outperform institutional messaging. Strongest for social and community activation channels.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div style="font-family:'Unbounded',sans-serif;font-size:15px;letter-spacing:-1px;color:var(--white);">
+    <span style="font-weight:400;">Start with </span><span style="font-weight:900;color:var(--lavender);">hello.</span>
+  </div>
+  <div style="font-size:10px;color:rgba(255,255,255,.25);letter-spacing:1.5px;text-transform:uppercase;">988 Baltimore — Aptive Campaign Concept</div>
+  <div style="font-size:11px;font-weight:600;color:var(--lavender);">988helpline.org</div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); }});
+}, {threshold: 0.08});
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
