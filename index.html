@@ -113,39 +113,41 @@ body{background:var(--ink);font-family:'DM Sans',sans-serif;color:var(--white);o
 .desc-cell.featured .desc-line{color:var(--lavender2);}
 
 /* STORYBOARD */
-.storyboard{background:var(--ink);padding:72px 64px;}
+.storyboard{background:var(--mist);padding:72px 64px;}
+.sb-hed{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(22px,3vw,38px);letter-spacing:-1.5px;color:var(--ink);margin-bottom:8px;line-height:1;}
+.sb-hed-sub{font-family:'Lora',serif;font-style:italic;font-size:16px;color:var(--purple2);margin-bottom:36px;}
 .sb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:8px;}
-.sb-cell{background:var(--ink3);overflow:hidden;position:relative;}
+.sb-cell{background:var(--white);overflow:hidden;position:relative;}
 .sb-img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;transition:transform .4s ease;filter:grayscale(15%);}
 .sb-cell:hover .sb-img{transform:scale(1.03);}
 .sb-caption{padding:14px 16px;}
-.sb-speaker{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--lavender2);margin-bottom:5px;}
-.sb-vo{font-family:'Lora',serif;font-style:italic;font-size:14px;color:rgba(255,255,255,.85);line-height:1.65;}
-.sb-vo-block{margin-top:32px;padding:28px 32px;background:var(--ink3);border-left:3px solid var(--purple);max-width:760px;}
-.sb-vo-block p{font-size:14px;line-height:2;color:rgba(255,255,255,.7);font-weight:300;}
-.sb-vo-block strong{color:var(--white);font-weight:500;}
+.sb-speaker{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--purple2);margin-bottom:5px;}
+.sb-vo{font-family:'Lora',serif;font-style:italic;font-size:14px;color:var(--ink);line-height:1.65;}
+.sb-vo-block{margin-top:32px;padding:28px 32px;background:var(--white);border-left:3px solid var(--purple);max-width:760px;}
+.sb-vo-block p{font-size:14px;line-height:2;color:#1a1a1a;font-weight:300;}
+.sb-vo-block strong{color:var(--ink);font-weight:600;}
 
 /* ACTIVATIONS */
-.activations{background:var(--cream);padding:72px 64px;}
-.act-framing{margin-bottom:32px;padding:16px 20px;background:rgba(0,0,0,.06);border-left:3px solid var(--purple);max-width:680px;}
-.act-framing p{font-size:12px;line-height:1.75;color:rgba(0,0,0,.5);font-weight:300;font-style:italic;}
+.activations{background:var(--ink2);padding:72px 64px;}
+.act-framing{margin-bottom:32px;padding:16px 20px;background:rgba(255,255,255,.05);border-left:3px solid var(--purple);max-width:680px;}
+.act-framing p{font-size:12px;line-height:1.75;color:rgba(255,255,255,.45);font-weight:300;font-style:italic;}
 .act-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
-.act{background:var(--white);padding:28px 24px;transition:transform .2s,box-shadow .2s;}
-.act:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.1);}
+.act{background:var(--ink3);padding:28px 24px;transition:transform .2s,box-shadow .2s;}
+.act:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.4);}
 .act::before{content:'';display:block;width:24px;height:3px;background:linear-gradient(90deg,var(--purple),var(--green));margin-bottom:16px;}
-.act h4{font-family:'Unbounded',sans-serif;font-weight:700;font-size:11px;letter-spacing:-.2px;color:var(--ink);margin-bottom:10px;line-height:1.3;}
+.act h4{font-family:'Unbounded',sans-serif;font-weight:700;font-size:11px;letter-spacing:-.2px;color:var(--white);margin-bottom:10px;line-height:1.3;}
 .act-tactics{display:flex;flex-direction:column;gap:5px;margin-bottom:12px;}
-.act-tactic{font-size:11px;font-weight:600;color:var(--purple2);}
-.act p{font-size:12px;line-height:1.7;color:rgba(0,0,0,.5);font-weight:300;}
+.act-tactic{font-size:11px;font-weight:600;color:var(--lavender2);}
+.act p{font-size:12px;line-height:1.7;color:rgba(255,255,255,.5);font-weight:300;}
 
 /* ALTERNATES */
-.alts{background:var(--ink);padding:72px 64px;}
+.alts{background:var(--purple2);padding:72px 64px;}
 .alts-intro{max-width:640px;margin-bottom:48px;}
-.alts-intro p{font-size:14px;line-height:1.8;color:rgba(255,255,255,.5);font-weight:300;}
+.alts-intro p{font-size:14px;line-height:1.8;color:rgba(255,255,255,.65);font-weight:300;}
 .alts-intro strong{color:var(--white);font-weight:500;}
 .alts-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px;}
-.alt{background:var(--ink2);padding:36px;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s;}
-.alt:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.4);}
+.alt{background:var(--purple3);padding:36px;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s;}
+.alt:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.3);}
 .alt-bar{position:absolute;top:0;left:0;right:0;height:3px;}
 .alt-a .alt-bar{background:var(--purple);}
 .alt-b .alt-bar{background:var(--green);}
@@ -158,9 +160,10 @@ body{background:var(--ink);font-family:'DM Sans',sans-serif;color:var(--white);o
 .alt-body strong{color:var(--white);font-weight:500;}
 .alt-why{margin-top:14px;padding:12px 14px;background:rgba(255,255,255,.04);border-left:2px solid rgba(255,255,255,.1);}
 .alt-why p{font-size:11px;color:rgba(255,255,255,.35);line-height:1.65;font-style:italic;}
-.dw-anim-wrap{background:var(--purple3);border-radius:2px;padding:20px 24px;margin-bottom:16px;text-align:center;overflow:hidden;}
+.dw-anim-wrap{background:var(--purple4);border-radius:2px;padding:20px 24px;margin-bottom:16px;text-align:center;overflow:hidden;}
 .dw-static{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(11px,1.4vw,15px);color:rgba(255,255,255,.4);letter-spacing:-.3px;display:block;margin-bottom:4px;}
-.dw-dynamic{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(14px,1.8vw,20px);letter-spacing:-.5px;color:var(--white);height:1.4em;overflow:hidden;}
+.dw-dynamic{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(20px,2.4vw,30px);letter-spacing:-.5px;color:var(--white);height:1.3em;overflow:hidden;}
+.dw-static-988{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(20px,2.4vw,30px);letter-spacing:-.5px;color:rgba(255,255,255,.35);margin-top:2px;display:block;}
 .dw-dynamic-inner{animation:dwroll 5s infinite;}
 @keyframes dwroll{
   0%,25%{transform:translateY(0);}
@@ -168,7 +171,7 @@ body{background:var(--ink);font-family:'DM Sans',sans-serif;color:var(--white);o
   66%,91%{transform:translateY(-66.66%);}
   99%,100%{transform:translateY(0);}
 }
-.dw-dynamic-inner div{height:1.4em;display:flex;align-items:center;justify-content:center;}
+.dw-dynamic-inner div{height:1.3em;display:flex;align-items:center;justify-content:center;}
 .dw-dynamic-inner .opt1{color:var(--lavender2);}
 .dw-dynamic-inner .opt2{color:var(--green);}
 .dw-dynamic-inner .opt3{color:var(--white);}
@@ -225,7 +228,7 @@ footer{background:var(--ink);padding:40px 64px;display:flex;align-items:center;j
   <h2 class="bi-hed">Start with <span class="pu">hello.</span></h2>
   <div class="bi-body">
     <p>The first thing you say when a 988 counselor picks up is hello. That's it. You don't need to explain yourself or have the right words ready. Saying hello is the first step, and everything after it gets easier from there.</p>
-    <p>This concept responds directly to the research: the people who need 988 most are often the people who don't think they qualify. Whether someone is in crisis or just carrying something they haven't told anyone, the campaign works to lower the stakes of reaching out. Three ways in — call, text, or chat — each one designed to meet people where they are and make starting as easy as possible.</p>
+    <p>This concept responds directly to the research: the people who need 988 most are often the people who don't think they qualify. Whether someone is experiencing an emotional emergency or just carrying something they haven't told anyone, the campaign works to lower the stakes of reaching out. Three ways in — call, text, or chat — each one designed to meet people where they are and make starting as easy as possible.</p>
     <p>988 is here for all of it. For anxiety, grief, and hard days. For people experiencing a mental health emergency. For someone worried about a neighbor. For a parent scared for their kid. For a friend who doesn't know what else to do. "Start with Hello" holds all of that without drawing a line between who qualifies and who doesn't.</p>
   </div>
 </section>
@@ -310,7 +313,8 @@ footer{background:var(--ink);padding:40px 64px;display:flex;align-items:center;j
 
 <!-- STORYBOARD / PSA -->
 <section class="storyboard fade-in">
-  <div class="slabel slabel-light">PSA Concept — "It Starts with Hello"</div>
+  <div class="sb-hed">"It Starts with Hello."</div>
+  <div class="sb-hed-sub">PSA Concept</div>
   <div class="sb-grid">
 
     <!-- UPDATE: replace sb-placeholder.jpg with your actual still images, named sb-01.jpg through sb-09.jpg -->
@@ -396,13 +400,14 @@ footer{background:var(--ink);padding:40px 64px;display:flex;align-items:center;j
       <strong>Person from Frame One:</strong> Hello?<br>
       <strong>Narrator:</strong> It starts with hello. Everyone falls down, but we'll always pick up.
     </p>
+    <p style="margin-top:20px;font-size:13px;font-weight:600;letter-spacing:1px;color:var(--purple2);">Call or text 988 &nbsp;·&nbsp; 988helpline.org</p>
   </div>
 </section>
 
 
 <!-- ACTIVATIONS -->
 <section class="activations fade-in">
-  <div class="slabel slabel-dark">Potential Campaign Activations</div>
+  <div class="slabel slabel-light">Potential Campaign Activations</div>
   <div class="act-framing">
     <p>The following represents potential activations for this campaign. Specific channels, partners, and formats will be confirmed through research, community co-design, and client alignment prior to final campaign development.</p>
   </div>
@@ -498,11 +503,12 @@ footer{background:var(--ink);padding:40px 64px;display:flex;align-items:center;j
         <span class="dw-static">DON'T WAIT.</span>
         <div class="dw-dynamic">
           <div class="dw-dynamic-inner">
-            <div class="opt1">CALL. 988.</div>
-            <div class="opt2">TEXT. 988.</div>
-            <div class="opt3">CHAT. 988.</div>
+            <div class="opt1">CALL</div>
+            <div class="opt2">TEXT</div>
+            <div class="opt3">CHAT</div>
           </div>
         </div>
+        <span class="dw-static-988">988.</span>
       </div>
       <div class="alt-body">
         <p>Three executions, one platform. <strong>Don't Wait. Call. 988. / Don't Wait. Text. 988. / Don't Wait. Chat. 988.</strong> Each version targets a different entry point.</p>
