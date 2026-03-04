@@ -73,7 +73,7 @@ body{background:var(--ink);font-family:'DM Sans',sans-serif;color:var(--white);o
 .big-idea{background:var(--cream);padding:80px 64px 72px;color:var(--ink);}
 .bi-hed{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(26px,3.8vw,48px);letter-spacing:-2px;color:var(--ink);line-height:.95;margin-bottom:28px;}
 .bi-hed .pu{color:var(--purple2);}
-.bi-body{font-size:15px;line-height:1.85;color:#1a1a1a;font-weight:300;}
+.bi-body{font-size:16px;line-height:1.85;color:#1a1a1a;font-weight:300;max-width:68ch;}
 .bi-body p{margin-bottom:18px;}
 .bi-body p:last-child{margin-bottom:0;}
 
@@ -84,11 +84,11 @@ body{background:var(--ink);font-family:'DM Sans',sans-serif;color:var(--white);o
 .research-list{display:flex;flex-direction:column;gap:18px;margin-top:8px;}
 .rl-item{display:flex;gap:14px;align-items:flex-start;}
 .rl-dot{width:5px;height:5px;border-radius:50%;background:var(--purple2);flex-shrink:0;margin-top:7px;}
-.rl-item p{font-size:13px;line-height:1.75;color:#1a1a1a;font-weight:300;}
+.rl-item p{font-size:16px;line-height:1.75;color:#1a1a1a;font-weight:300;}
 .rl-item strong{color:var(--purple2);font-weight:600;}
 .aud-paras{display:flex;flex-direction:column;gap:22px;margin-top:8px;}
-.aud-para-label{font-family:'Unbounded',sans-serif;font-weight:700;font-size:10px;letter-spacing:-.2px;color:var(--lavender2);margin-bottom:6px;}
-.aud-para p{font-size:13px;line-height:1.7;color:rgba(255,255,255,.75);font-weight:300;}
+.aud-para-label{font-family:'Unbounded',sans-serif;font-weight:700;font-size:13px;letter-spacing:-.2px;color:var(--lavender2);margin-bottom:6px;}
+.aud-para p{font-size:16px;line-height:1.7;color:rgba(255,255,255,.75);font-weight:300;}
 .aud-para strong{color:var(--white);font-weight:500;}
 .aud-note{margin-top:28px;padding:16px 18px;background:rgba(255,255,255,.06);border-left:3px solid rgba(255,255,255,.15);}
 .aud-note p{font-size:12px;line-height:1.7;color:rgba(255,255,255,.65);font-style:italic;font-weight:300;}
@@ -121,7 +121,7 @@ body{background:var(--ink);font-family:'DM Sans',sans-serif;color:var(--white);o
 .sb-vo{font-family:'Lora',serif;font-style:italic;font-size:13px;color:var(--ink);line-height:1.6;}
 .sb-vo-block{background:var(--white);border-left:3px solid var(--purple);padding:24px 22px;position:sticky;top:24px;}
 .sb-vo-block .slabel{margin-bottom:14px;}
-.sb-vo-block p{font-size:12px;line-height:2;color:#1a1a1a;font-weight:300;}
+.sb-vo-block p{font-size:16px;line-height:2;color:#1a1a1a;font-weight:300;}
 .sb-vo-block strong{color:var(--ink);font-weight:600;}
 @media(max-width:960px){
   .sb-layout{grid-template-columns:1fr;}
@@ -144,7 +144,7 @@ body{background:var(--ink);font-family:'DM Sans',sans-serif;color:var(--white);o
 /* ALTERNATES */
 .alts{background:var(--purple2);padding:72px 64px;}
 .alts-intro{max-width:640px;margin-bottom:48px;}
-.alts-intro p{font-size:14px;line-height:1.8;color:rgba(255,255,255,.65);font-weight:300;}
+.alts-intro p{font-size:16px;line-height:1.8;color:rgba(255,255,255,.65);font-weight:300;max-width:68ch;}
 .alts-intro strong{color:var(--white);font-weight:500;}
 .alts-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px;}
 .alt{background:var(--purple3);padding:36px;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s;}
@@ -222,11 +222,11 @@ footer{background:var(--ink);padding:40px 64px;display:flex;align-items:center;j
 
 <!-- BIG IDEA -->
 <section class="big-idea fade-in">
-  <div class="slabel slabel-dark">The Big Idea</div>
+  <div class="slabel slabel-dark">The Big Picture</div>
   <div class="bi-body">
-    <p>The first thing you say when a 988 counselor picks up is hello. That's it. You don't need to explain yourself or have the right words ready. Saying hello is the first step, and everything after it gets easier from there.</p>
-    <p>This concept responds directly to the research: the people who need 988 most are often the people who don't think they qualify. Whether someone is experiencing an emotional emergency or just carrying something they haven't told anyone, the campaign works to lower the stakes of reaching out. Three ways in — call, text, or chat — each one designed to meet people where they are and make starting as easy as possible.</p>
-    <p>988 is here for all of it. For anxiety, grief, and hard days. For people experiencing a mental health emergency. For someone worried about a neighbor. For a parent scared for their kid. For a friend who doesn't know what else to do. "Start with Hello" holds all of that without drawing a line between who qualifies and who doesn't.</p>
+    <p>All it takes is hello. That's it.</p>
+    <p>Our concept is tied to research that suggests the people who need 988 most are often the people who don't think they qualify. Whether someone is experiencing a crisis or just carrying something they haven't told anyone, this campaign works to lower the stakes of just reaching out for help. Call, text, or chat — you don't have to have the right words, just say hello.</p>
+    <p>988 is here for all of it. For anxiety, grief, and hard days. For people experiencing a mental health emergency. For someone worried about a neighbor. For a parent scared for their kid. For a friend who doesn't know what else to do. Just start with "Hello."</p>
   </div>
 </section>
 
@@ -244,11 +244,11 @@ footer{background:var(--ink);padding:40px 64px;display:flex;align-items:center;j
     <div class="slabel slabel-cream">Grounded in Research</div>
     <div class="research-list">
       <!-- EDIT TEXT HERE -->
-      <div class="rl-item"><div class="rl-dot"></div><p><strong>Lowering the stakes.</strong> BHSB's top finding: people don't call because they don't think their problem is big enough. The campaign will be built to remove that threshold at every touchpoint.</p></div>
-      <div class="rl-item"><div class="rl-dot"></div><p><strong>No clinical language.</strong> Everyday words like "anxious," "grieving," and "overwhelmed" will make 988 feel accessible to everyone.</p></div>
-      <div class="rl-item"><div class="rl-dot"></div><p><strong>Confidentiality is a top concern.</strong> Across demographics surveyed, fear of being found out was a primary barrier. Messaging will address privacy and trust directly and consistently.</p></div>
-      <div class="rl-item"><div class="rl-dot"></div><p><strong>Human, not institutional.</strong> Distrust of systems is heightened across Baltimore, particularly in communities already navigating other pressures. The tone will feel like a neighbor, not a government program.</p></div>
-      <div class="rl-item"><div class="rl-dot"></div><p><strong>Hopeful, not heavy.</strong> Research showed that despairing visuals cause people to disengage. Purple as primary color will balance warmth with seriousness throughout the visual system.</p></div>
+      <div class="rl-item"><div class="rl-dot"></div><p><strong>Lowering the stakes.</strong> BHSB's research shows that people don't call because they don't think their problem is big enough. This campaign highlights that no problem is too small — or too big — for 988 counselors.</p></div>
+      <div class="rl-item"><div class="rl-dot"></div><p><strong>No clinical language.</strong> Everyday words like "anxious," "grieving," and "overwhelmed" make 988 feel accessible to everyone.</p></div>
+      <div class="rl-item"><div class="rl-dot"></div><p><strong>Always confidential.</strong> Across demographics surveyed, fear of being found out was a primary barrier. By emphasizing confidentiality, we elevate that concern immediately.</p></div>
+      <div class="rl-item"><div class="rl-dot"></div><p><strong>Human, not institutional.</strong> Distrust of systems is heightened across Baltimore, particularly in communities already navigating other pressures. Our ads position 988 as a trusted resource, not a government program.</p></div>
+      <div class="rl-item"><div class="rl-dot"></div><p><strong>Hopeful, not heavy.</strong> Research showed that despairing visuals cause people to disengage. We choose our colors and images to highlight warmth and trust.</p></div>
     </div>
   </div>
   <div class="split-audiences">
@@ -257,19 +257,19 @@ footer{background:var(--ink);padding:40px 64px;display:flex;align-items:center;j
       <!-- EDIT TEXT HERE -->
       <div class="aud-para">
         <div class="aud-para-label">Youth Ages 13 to 24</div>
-        <p>Creative tailored for younger audiences, with text and chat as primary entry points. Sports figures and trusted community voices as potential messengers.</p>
+        <p>We tailor creative for this audience to focus on text and chat as primary entry points. Sports figures and trusted community voices serve as messengers.</p>
       </div>
       <div class="aud-para">
         <div class="aud-para-label">Men 45 and Older, Including Veterans</div>
-        <p>Practical framing, phone call as primary entry point. Community figures and athletes as trusted messengers. Stigma reduction is especially important for this audience.</p>
+        <p>We focus on practical, stigma-reducing messages for men, with the phone number as the primary entry point.</p>
       </div>
       <div class="aud-para">
         <div class="aud-para-label">LGBTQ+ Residents</div>
-        <p>Messaging will center affirming, culturally competent language. The dedicated 988 LGBTQ+ youth line is available 24/7 and worth featuring prominently for this audience.</p>
+        <p>Messaging will center affirming, culturally competent language. The dedicated 988 LGBTQ+ youth line is available 24/7 and featured prominently for this audience.</p>
       </div>
       <div class="aud-para">
         <div class="aud-para-label">People in or Approaching a Mental Health Emergency</div>
-        <p>988 handles emergencies too. The campaign will make clear that 988 is appropriate across the full spectrum, so no one hesitates when it matters most.</p>
+        <p>988 counselors are equipped to handle even the most serious of crises — we remind audiences that you should never hesitate to call when it matters most.</p>
       </div>
     </div>
     <div class="aud-note">
@@ -289,20 +289,32 @@ footer{background:var(--ink);padding:40px 64px;display:flex;align-items:center;j
       <div class="desc-line">Call · Text · Chat · Free · Confidential · Specialized Counselors · Any Time · 988helpline.org</div>
     </div>
     <div class="desc-cell">
-      <div class="desc-situation">For when you're scared for someone you love.</div>
+      <div class="desc-situation">For when you can't stop worrying about it.</div>
+      <div class="desc-line">Call, text, or chat 988.</div>
+    </div>
+    <div class="desc-cell">
+      <div class="desc-situation">For when your normal coping strategies aren't working.</div>
       <div class="desc-line">Call or text 988.</div>
     </div>
     <div class="desc-cell">
-      <div class="desc-situation">Para cuando no sabes por donde empezar.</div>
-      <div class="desc-line">Llama o escribe al 988.</div>
+      <div class="desc-situation">For when you have nowhere else to turn.</div>
+      <div class="desc-line">Call or chat 988.</div>
+    </div>
+    <div class="desc-cell">
+      <div class="desc-situation">For when you don't feel like yourself.</div>
+      <div class="desc-line">Call or text 988.</div>
     </div>
     <div class="desc-cell">
       <div class="desc-situation">For when it's been heavy for a while.</div>
       <div class="desc-line">Call, text, or chat 988.</div>
     </div>
     <div class="desc-cell">
-      <div class="desc-situation">For when something feels like an emergency and you're not sure who to call.</div>
-      <div class="desc-line">Call or chat 988.</div>
+      <div class="desc-situation">For when you're scared for someone you love.</div>
+      <div class="desc-line">Call or text 988.</div>
+    </div>
+    <div class="desc-cell">
+      <div class="desc-situation">Para cuando no sabes por donde empezar.</div>
+      <div class="desc-line">Llama o escribe al 988.</div>
     </div>
   </div>
 </section>
